@@ -13,14 +13,13 @@ def hangman():
     word_list = [i for i in word]
     while guesses > 0:
         dashes = '-' * len(word)
-        print(dashes)
         guess = input('Enter a letter: ').lower()
         if guess not in word:
+            print(dashes)
             guesses -= 1
-        while guesses > 0:
-            return ''.join(['-' if guess != i else i for i in word_list])
+        elif guess in word:
+            dashes = ''.join(['-' if guess != i else i for i in word_list])
+            print(dashes)
     return 'Game Over'
-
-
 
 print(hangman())
