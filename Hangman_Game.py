@@ -11,11 +11,11 @@ print(word)
 def hangman():
     guesses = len(word)
     while guesses > 0:
-        print('-' * guesses)
+        print('-' * len(word))
         guess = input('Enter a letter: ').lower()
         if guess not in word:
             guesses -= 1
-
+    return 'Game Over'
 
 
 
