@@ -11,7 +11,7 @@ print(word)
 def hangman():
     guesses = len(word)
     word_list = [i for i in word]
-    dashes = ['-' for i in word]
+    dashes = '-' * len(word)
     guessed = []
     correct_guess = [i for i in guessed if i in word]
     while guesses > 0:
@@ -21,17 +21,20 @@ def hangman():
         if guess in guessed:
             print("You've already guessed that letter")
 
+        elif guess != guess.isalpha():
+            print('Guess is not a letter')
+
         elif guess not in word:
             print(''.join(dashes))
             print('Nope, that letter is not in the word')
             guessed.append(guess)
-            print('letters you have guessed: ' + str(guessed))
+            print('Letters you have guessed: ' + str(guessed))
             guesses -= 1
 
         elif guess in word:
             guessed.append(guess)
-            print('letters you have guessed: ' + guessed)
-            dashes = ''.join(dashes.replace(dashes[word_list.index(guess)], guess))
+            print('Letters you have guessed: ' + str(guessed))
+            dashes = dashes.replace(dashes[word_list.index(guess)], guess)
             print(dashes)
             print('Yes, you have guessed a correct letter')
 
