@@ -18,12 +18,14 @@ def hangman():
         guess = input('Enter a letter: ').lower()
         if guess in guessed:
             print("You've already guessed that letter")
+
         elif guess not in word:
             print(dashes)
             print('Nope, that letter is not in the word')
             guessed.append(guess)
             print(guessed)
             guesses -= 1
+
         elif guess in word:
             guessed.append(guess)
             print(guessed)
