@@ -21,8 +21,8 @@ def hangman():
         if guess in guessed:
             print("You've already guessed that letter")
 
-        elif guess != guess.isalpha():
-            print('Guess is not a letter')
+        elif len(guess) > 1:
+            print('You may only guess one letter at a time')
 
         elif guess not in word:
             print(''.join(dashes))
