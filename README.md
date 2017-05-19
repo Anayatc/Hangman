@@ -24,6 +24,6 @@ I set the number of allowed guesses to the length of the word. I aslo wanted a v
 I have not unit tested this code as it is in essence a very simple program, that takes user inputs, therefore testing for user inputs would be somewhat complex meaning testing the program would be substanially more time intentsive than a program of this nature is worth. 
 
 ## Bugs:
-1. the print statement after correct guess isn't working as expected.
-2. after guessing the word correctly it still allows user to inout guesses.
+1. ~~the print statement after correct guess isn't working as expected.~~
+2. ~~after guessing the word correctly it still allows user to inout guesses.~~
 3. ~~inputting a guess that has already been made doesn't return an error.~~
