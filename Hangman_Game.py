@@ -29,7 +29,7 @@ def hangman():
         elif guess in word:
             guessed.append(guess)
             print(guessed)
-            dashes = ''.join(['-' for i in word_list if i not in word_list])
+            dashes = ''.join(['-' for i in word_list if i not in guessed])
             print(dashes)
             print('Yes, you have guessed a correct letter')
     return 'Game Over'
