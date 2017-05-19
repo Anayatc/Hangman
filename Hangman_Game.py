@@ -16,6 +16,7 @@ def hangman():
     correct_guess = [i for i in guessed if i in word]
     while guesses > 0:
         guess = input('Enter a letter: ').lower()
+
         if guess in guessed:
             print("You've already guessed that letter")
 
@@ -32,6 +33,7 @@ def hangman():
             dashes = ''.join(['-' for i in word_list if i not in guessed])
             print(dashes)
             print('Yes, you have guessed a correct letter')
+
     return 'Game Over'
 
 
