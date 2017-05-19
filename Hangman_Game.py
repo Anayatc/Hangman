@@ -13,7 +13,6 @@ def hangman():
     word_list = [i for i in word]
     dashes = '-' * len(word)
     guessed = []
-    correct_guess = [i for i in guessed if i in word]
     letters_in_word_list = list(set(word_list))
     print(letters_in_word_list)
     while guesses > 0:
@@ -33,19 +32,18 @@ def hangman():
             print(''.join(dashes))
             print('Nope, that letter is not in the word')
             guessed.append(guess)
-            print('Letters you have guessed: ' + str(guessed))
+            print('Letters you have guessed: ' + str(guessed.sort()))
             guesses -= 1
 
         elif guess in word:
             guessed.append(guess)
-            print('Letters you have guessed: ' + str(guessed))
+            print('Letters you have guessed: ' + str(guessed.sort()))
             dashes = dashes.replace(dashes[word_list.index(guess)], guess)
             print(dashes)
             print('Yes, you have guessed a correct letter')
 
         elif letters_in_word_list.sort() == guessed.sort():
             print('You Win')
-
 
     return 'Game Over'
 
