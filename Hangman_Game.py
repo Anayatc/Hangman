@@ -38,11 +38,11 @@ def hangman():
         elif guess in word:
             guessed.append(guess)
             print('Letters you have guessed: ' + str(guessed.sort()))
-            dashes = dashes.replace(dashes[word_list.index(guess)], guess)
+            dashes = dashes.replace(dashes[word.index(guess)], guess)
             print(dashes)
             print('Yes, you have guessed a correct letter')
 
-        elif letters_in_word_list.sort() == guessed.sort():
+        elif len(''.join(guesses)) == word and letters_in_word_list.sort() == guessed.sort():
             print('You Win')
 
     return 'Game Over'
