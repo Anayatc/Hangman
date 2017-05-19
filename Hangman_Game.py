@@ -32,18 +32,15 @@ def hangman():
             print(''.join(dashes))
             print('Nope, that letter is not in the word')
             guessed.append(guess)
-            print('Letters you have guessed: ' + str(guessed.sort()))
             guesses -= 1
 
         elif guess in word:
             guessed.append(guess)
-            print('Letters you have guessed: ' + str(guessed.sort()))
-            dashes = dashes.replace(dashes[word.index(guess)], guess)
+            dashes = ''.join(j if j == guess else i for i, j in zip(dashes, word))
             print(dashes)
-            print('Yes, you have guessed a correct letter')
-
-        elif len(''.join(guesses)) == word and letters_in_word_list.sort() == guessed.sort():
-            print('You Win')
+            if '-' not in dashes:
+                print("You Win")
+                break
 
     return 'Game Over'
 
