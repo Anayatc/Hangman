@@ -1,22 +1,16 @@
 from random_words import RandomWords
 
 rw = RandomWords()
-
-# using the RandomWords Module selecting a random word and setting guesses to length of the random word
 word = ''.join(rw.random_words())
-# guesses = len(word)
-print(word)
 
 
 def hangman():
     guesses = len(word)
-    word_list = [i for i in word]
     dashes = '-' * len(word)
     guessed = []
-    letters_in_word_list = list(set(word_list))
-    print(letters_in_word_list)
+
     while guesses > 0:
-        print(''.join(dashes))
+        print(dashes)
         guess = input('Enter a letter: ').lower()
 
         if guess in guessed:
@@ -29,7 +23,7 @@ def hangman():
             print('You may only guess letters')
 
         elif guess not in word:
-            print(''.join(dashes))
+            print(dashes)
             print('Nope, that letter is not in the word')
             guessed.append(guess)
             guesses -= 1
@@ -42,7 +36,7 @@ def hangman():
                 print("You Win")
                 break
 
-    return 'Game Over'
+    return 'Game Over, the word was %s' % word
 
 
 print(hangman())
