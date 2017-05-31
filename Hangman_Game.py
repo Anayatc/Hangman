@@ -23,7 +23,7 @@ def hangman():
             print('You may only guess letters')
 
         elif guess not in word:
-            print(dashes)
+            print(dashes + "You have %d guesses remaining" % guesses)
             print('Nope, that letter is not in the word')
             guessed.append(guess)
             guesses -= 1
@@ -31,7 +31,7 @@ def hangman():
         elif guess in word:
             guessed.append(guess)
             dashes = ''.join(j if j == guess else i for i, j in zip(dashes, word))
-            print(dashes)
+            print(dashes + "You have %d guesses remaining" % guesses)
             if '-' not in dashes:
                 print("You Win")
                 break
